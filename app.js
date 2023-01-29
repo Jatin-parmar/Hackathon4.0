@@ -185,15 +185,6 @@ app.post('/', async (req, res) => {
     }
 })
 
-app.post('/signup', async (req, res) => {
-    otpgen(req.body.email);
-    nname = req.body.nam;
-    eemail = req.body.email;
-    passw = req.body.pwdd;
-    console.log(req.body.pwdd);
-    res.sendFile(__dirname + '/otpsu.html');
-})
-
 app.post('/forgot', async (req, res) => {
     console.log(req.body.email);
     eemail = req.body.email;
@@ -207,6 +198,7 @@ app.listen(3430, ()=>{
 
 
 app.post('/signup', async (req, res) => {
+    console.log(req.body);
     otpgen(req.body.email);
     nname = req.body.nam;
     eemail = req.body.email;
